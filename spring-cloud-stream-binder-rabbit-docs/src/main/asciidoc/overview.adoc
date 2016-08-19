@@ -1,10 +1,11 @@
 == Introduction
-This is Rabbitmq specific implementation for Spring Cloud Stream Binder.
-In the following sections, you can find more details
-on how you can work with Spring Cloud Stream Rabbit binder,
-in what concerns mapping the Spring Cloud Stream concepts onto the middleware concepts.
 
-==== Classpath Detection
+This guide describes the RabbitMQ implementation of the Spring Cloud Stream Binder.
+It contains information about the RabbitMQ design, usage and configuration options, as well as information on the Stream Cloud Stream concepts map into RabbitMQ specific constructs.
+
+== Usage
+
+For using the RabbitMQ binder
 
 By default, Spring Cloud Stream relies on Spring Boot's auto-configuration to configure the binding process.
 Following are the maven coordinates for including the Rabbitmq binder in a Spring Cloud Stream application.
@@ -25,12 +26,14 @@ The RabbitMQ Binder implementation maps the destination to a `TopicExchange`.
 For each consumer group, a `Queue` will be bound to that `TopicExchange`.
 Each consumer instance that binds will trigger creation of a corresponding RabbitMQ `Consumer` instance for its group's `Queue`.
 
-== Configuration Options and Properties
+== Configuration Options
+
+This sections contains settings that are specific to the RabbitMQ binder and its 
 
 For common configuration options and properties pertaining to binder,
 Please refer to the https://github.com/spring-cloud/spring-cloud-stream/blob/master/spring-cloud-stream-docs/src/main/asciidoc/spring-cloud-stream-overview.adoc#configuration-options[core docs].
 
-=== RabbitMQ Binder-Specific Settings
+=== RabbitMQ Binder Settings
 
 The following binder, consumer, and producer properties are specific to the RabbitMQ binder implementation.
 
